@@ -10,3 +10,4 @@ function cockroachSpeed(s) {
   }
 
 console.log(cockroachSpeed(1.08), 30);
+  
