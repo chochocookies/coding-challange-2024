@@ -46,3 +46,16 @@ function calc(expr) {
   return stack.length > 0 ? stack[0] : 0;
 }
 
+const dic = {
+  '+': (b, a) => a + b,
+  '-': (b, a) => a - b,
+  '*': (b, a) => a * b,
+  '/': (b, a) => a / b,
+}
+
+function calc(expr) {
+  if (expr == '') return 0
+  let result = []
+  expr.split(' ').forEach(op => result.push(dic[op] ? dic[op](result.pop(), result.pop()) : Number(op)))
+  return result.pop()
+}
