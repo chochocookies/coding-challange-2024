@@ -8,13 +8,13 @@
 // Notes
 // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 
-function duplicateEncode(word){
-    const lowerWord = word.toLowerCase();
-    const charCount = {};
+    function duplicateEncode(word){
+        const lowerWord = word.toLowerCase();
+        const charCount = {};
 
-    for (const char of lowerWord) {
-        charCount[char] = (charCount[char] || 0) + 1;
+        for (const char of lowerWord) {
+            charCount[char] = (charCount[char] || 0) + 1;
+        }
+
+        return lowerWord.split('').map(char => charCount[char] === 1 ? '(' : ')').join('');
     }
-
-    return lowerWord.split('').map(char => charCount[char] === 1 ? '(' : ')').join('');
-}
